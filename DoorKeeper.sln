@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28902.138
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoorKeeper", "DoorKeeper\DoorKeeper.csproj", "{5125C9FD-35EA-4BB7-A4DC-ECAC9E93A39B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E759E1C9-2EB9-4FC7-A601-7247BDCA5700}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5125C9FD-35EA-4BB7-A4DC-ECAC9E93A39B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5125C9FD-35EA-4BB7-A4DC-ECAC9E93A39B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5125C9FD-35EA-4BB7-A4DC-ECAC9E93A39B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5125C9FD-35EA-4BB7-A4DC-ECAC9E93A39B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {738BF2B2-07B7-471B-AF08-C17B194ED402}
+	EndGlobalSection
+EndGlobal
