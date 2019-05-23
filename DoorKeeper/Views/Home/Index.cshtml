@@ -2,12 +2,16 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 
-    <video width="640" height="480" controls>
-        <source src="/api/video" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</div>
+        <video id="livestream"
+               class="video-js vjs-default-skin vjs-big-play-centered"
+               controls
+               autoplay
+               preload="auto"
+               data-setup='{"techorder" : ["flash","html5] }'>
+            <source src="rtmp://184.72.239.149/vod&mp4:BigBuckBunny_115k.mov" type="rtmp/mp4">
+        </video>
+    </div>

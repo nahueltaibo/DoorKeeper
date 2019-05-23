@@ -23,32 +23,45 @@ namespace DoorKeeper.Controllers
         public async Task<FileStreamResult> Get()
         {
 
-            MMALCamera cam = MMALCamera.Instance;
-
-            //using (var vidCaptureHandler = new VideoStreamCaptureHandler("/home/pi/videos/", "h264"))
-            using (var vidCaptureHandler = new MemoryStreamCaptureHandler())
+            try
             {
-                var cts = new CancellationTokenSource(TimeSpan.FromMinutes(3));
+                var urlBlob = "rtmp://184.72.239.149/vod/BigBuckBunny_115k.mov";
 
-
-
-
-                //var urlBlob = "/dev/video";
-                //var urlBlob = "https://localhost/feed.mp4";
-                var urlBlob = "https://anthonygiretti.blob.core.windows.net/videos/earth.mp4";
-
-                //var stream = await _client.GetStreamAsync(urlBlob);
-
-                var stream = vidCaptureHandler.CurrentStream;
-
-                // Take video for 3 minutes.
-                await cam.TakeVideo(vidCaptureHandler, cts.Token);
-
-                // Only call when you no longer require the camera, i.e. on app shutdown.
-                cam.Cleanup();
+                var stream = await _client.GetStreamAsync(urlBlob);
 
                 return new FileStreamResult(stream, "video/mp4");
             }
+            catch(Exception ex)
+            {
+                throw;
+            }
+
+            //MMALCamera cam = MMALCamera.Instance;
+
+            ////using (var vidCaptureHandler = new VideoStreamCaptureHandler("/home/pi/videos/", "h264"))
+            //using (var vidCaptureHandler = new MemoryStreamCaptureHandler())
+            //{
+            //    var cts = new CancellationTokenSource(TimeSpan.FromMinutes(3));
+
+
+
+
+            //    //var urlBlob = "/dev/video";
+            //    //var urlBlob = "https://localhost/feed.mp4";
+            //    var urlBlob = "https://anthonygiretti.blob.core.windows.net/videos/earth.mp4";
+
+            //    //var stream = await _client.GetStreamAsync(urlBlob);
+
+            //    var stream = vidCaptureHandler.CurrentStream;
+
+            //    // Take video for 3 minutes.
+            //    await cam.TakeVideo(vidCaptureHandler, cts.Token);
+
+            //    // Only call when you no longer require the camera, i.e. on app shutdown.
+            //    cam.Cleanup();
+
+            //    return new FileStreamResult(stream, "video/mp4");
+            //}
 
 
         }

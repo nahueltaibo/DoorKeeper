@@ -23,21 +23,21 @@ cd publish
 
 Write-Host
 Write-Host -ForegroundColor Green Ensuring the project folder exists in the Raspberry Pi...
-plink.exe -ssh $rpiUser@$rpiHost -pw $rpiPassword mkdir /home/pi/dev/$project
+plink.exe -ssh $rpiUser@$rpiHost -pw $rpiPassword mkdir /home/pi/Dev/$project
 
 Write-Host
 Write-Host -ForegroundColor Green Copying publish content to Raspberry Pi...
-pscp -r -pw $rpiPassword .\ $rpiUser@"$rpiHost":/home/pi/dev/$project/
+pscp -r -pw $rpiPassword .\ $rpiUser@"$rpiHost":/home/pi/Dev/$project/
 
 popd
 
 Write-Host
 Write-Host -ForegroundColor Green Making file executable...
-plink.exe -ssh $rpiUser@$rpiHost -pw $rpiPassword sudo chmod +x /home/pi/dev/$project/$project
+plink.exe -ssh $rpiUser@$rpiHost -pw $rpiPassword sudo chmod +x /home/pi/Dev/$project/$project
 
 #Write-Host
 #Write-Host -ForegroundColor Green Running the published executable...
-#plink.exe -ssh $rpiUser@$rpiHost -pw $rpiPassword /home/pi/dev/$project/$project --urls http://*:5000
+#plink.exe -ssh $rpiUser@$rpiHost -pw $rpiPassword /home/pi/Dev/$project/$project --urls http://*:5000
 
 Write-Host
 Write-Host -ForegroundColor Green Now connect with ssh and run command: $project --urls http://*:5000
