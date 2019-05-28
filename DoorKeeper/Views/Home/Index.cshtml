@@ -1,17 +1,30 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-    <div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-
-        <video id="livestream"
-               class="video-js vjs-default-skin vjs-big-play-centered"
-               controls
-               autoplay
-               preload="auto"
-               data-setup='{"techorder" : ["flash","html5] }'>
-            <source src="rtmp://184.72.239.149/vod&mp4:BigBuckBunny_115k.mov" type="rtmp/mp4">
-        </video>
+﻿<div class="text-center">
+    <h1>DEMO with WebRTC</h1>
+    <label id='server'>Web Service URL <input required type="text" id="address" value="raspberrypi:8888/webrtc" title="hostname (or IP address) and port of the UV4L WebRTC Web Service" /></label>
+    <div>
+        <button id='start' title="If you do not see any video stream, make sure your browser supports the codec used within this demo (see the source code for details, or try Firefox or Chrome)">Start Streaming</button>
+        <button id='stop'>Stop Streaming</button>
     </div>
+    <video id='v'></video>
+</div>
+
+@section Scripts{
+    <script src='js\signalling.js'></script>
+    <script src='js\main.js'></script>
+    <script type='text/javascript'>
+        var Module = {
+            preRun: [],
+            postRun: [],
+            print: (function () {
+                return function (text) {
+                    text = Array.prototype.slice.call(arguments).join(' ');
+                    console.log(text);
+                };
+            })(),
+            printErr: function (text) {
+                text = Array.prototype.slice.call(arguments).join(' ');
+                console.error(text);
+            }
+        };
+    </script>
+}

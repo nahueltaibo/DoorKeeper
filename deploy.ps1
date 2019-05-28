@@ -16,20 +16,21 @@ Write-Host
 
 Write-Host
 Write-Host -ForegroundColor Green Publishing to local folder...
-dotnet publish -r linux-arm -c Debug -o ".\publish"
+#dotnet publish -r linux-arm -c Debug -o ".\publish"
+dotnet publish -r linux-arm -c Debug -o "\\raspberrypi\Dev\$project"
 
-pushd
-cd publish
+#pushd
+#cd publish
 
-Write-Host
-Write-Host -ForegroundColor Green Ensuring the project folder exists in the Raspberry Pi...
-plink.exe -ssh $rpiUser@$rpiHost -pw $rpiPassword mkdir /home/pi/Dev/$project
+#Write-Host
+#Write-Host -ForegroundColor Green Ensuring the project folder exists in the Raspberry Pi...
+#plink.exe -ssh $rpiUser@$rpiHost -pw $rpiPassword mkdir /home/pi/Dev/$project
 
-Write-Host
-Write-Host -ForegroundColor Green Copying publish content to Raspberry Pi...
-pscp -r -pw $rpiPassword .\ $rpiUser@"$rpiHost":/home/pi/Dev/$project/
+#Write-Host
+#Write-Host -ForegroundColor Green Copying publish content to Raspberry Pi...
+#pscp -r -pw $rpiPassword .\ $rpiUser@"$rpiHost":/home/pi/Dev/$project/
 
-popd
+#popd
 
 Write-Host
 Write-Host -ForegroundColor Green Making file executable...

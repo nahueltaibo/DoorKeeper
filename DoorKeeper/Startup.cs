@@ -49,8 +49,14 @@ namespace DoorKeeper
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            var webSocketOptions = new WebSocketOptions()
+            {
+                KeepAliveInterval = TimeSpan.FromSeconds(120),
+                ReceiveBufferSize = 8 * 1024
+            };
 
             app.UseCookiePolicy();
 
