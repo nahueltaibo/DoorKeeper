@@ -13,4 +13,6 @@ fi
 
 sudo apt-get update && sudo apt-get install \
   uv4l \
-  uv4l-raspicam
+  uv4l-raspicam \
+  uv4l-raspicam-extras \
+  uv4l-server
