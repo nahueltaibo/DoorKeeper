@@ -24,3 +24,12 @@ sudo sudo apt-get install -y \
   uv4l-raspicam \
   uv4l-raspicam-extras \
   uv4l-server
+
+
+printf "\n${GREEN}Use this command to start the server: ${NC}\n"
+printf "${GREEN}uv4l --auto-video_nr --driver raspicam --encoding h264 --width 640 --height 480 --framerate 15${NC}\n"
+
+printf "\n${GREEN}Use this command to stop the server: ${NC}\n"
+printf "${GREEN}sudo service uv4l_raspicam stop${NC}\n"
+
+uv4l --auto-video_nr --driver raspicam --encoding h264 --width 640 --height 480 --framerate 15
