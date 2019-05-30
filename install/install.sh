@@ -30,6 +30,8 @@ printf "${GREEN}$ uv4l --auto-video_nr --driver raspicam --encoding h264 --width
 
 printf "\n${GREEN}After starting the server, you can watch the stream from chrome at:${NC}\n"
 printf "${GREEN}http://raspberrypi:8080//stream/video.h264${NC}\n"
+printf "${GREEN}http://raspberrypi:8080//stream/video.mjpeg${NC}\n"
+printf "${GREEN}http://raspberrypi:8080//stream/video.jpeg${NC}\n"
 
 printf "\n${GREEN}Use this command to stop the server: ${NC}\n"
 printf "${GREEN}$ sudo pkill uv4l${NC}\n"
