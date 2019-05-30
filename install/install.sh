@@ -22,14 +22,14 @@ printf "\n${GREEN}Installing required packages...${NC}\n"
 sudo sudo apt-get install -y \
   uv4l \
   uv4l-raspicam \
-  uv4l-raspicam-extras \
+  #uv4l-raspicam-extras \
   uv4l-server
 
-
 printf "\n${GREEN}Use this command to start the server: ${NC}\n"
-printf "${GREEN}uv4l --auto-video_nr --driver raspicam --encoding h264 --width 640 --height 480 --framerate 15${NC}\n"
+printf "${GREEN}$ uv4l --auto-video_nr --driver raspicam --encoding h264 --width 640 --height 480 --framerate 15${NC}\n"
+
+printf "\n${GREEN}After starting the server, you can watch the stream from chrome at:${NC}\n"
+printf "${GREEN}http://raspberrypi:8080//stream/video.h264${NC}\n"
 
 printf "\n${GREEN}Use this command to stop the server: ${NC}\n"
-printf "${GREEN}sudo service uv4l_raspicam stop${NC}\n"
-
-uv4l --auto-video_nr --driver raspicam --encoding h264 --width 640 --height 480 --framerate 15
+printf "${GREEN}$ sudo pkill uv4l${NC}\n"
