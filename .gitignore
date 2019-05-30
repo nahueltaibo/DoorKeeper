@@ -330,3 +330,4 @@ ASALocalRun/
 .mfractor/
 /secrets.cmd
 /secrets.ps1
+.vscode
